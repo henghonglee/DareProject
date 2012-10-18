@@ -5,10 +5,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-<!-- 1. jquery library -->
-<script
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
-</script>
+
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
 <!-- 2. flowplayer -->
 <script src="http://releases.flowplayer.org/5.0.0/flowplayer.min.js"></script>
@@ -26,6 +27,11 @@ flowplayer.conf = {
 <!-- 3. skin -->
 <link rel="stylesheet" type="text/css"
    href="http://releases.flowplayer.org/5.0.0/skin/minimalist.css" />
+
+
+
+
+
 </head>
 <body>
 	<p class="notice"><%= notice %></p>
