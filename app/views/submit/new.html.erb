@@ -1,0 +1,12 @@
+<h1>Submit#new</h1>
+
+
+<%= simple_form_for(@submit, :url => "/submit?id=#{@objectId}",:html=>{:class=>"span5", :mulitpart=>true }) do |f| %>
+  	<%= f.input :attached_video, :required => false , :label=> "attachedvideo"%></br></br>
+
+  
+  <div class="form-actions">
+    <%= f.button :submit, "Upload!", class: "btn btn-large btn-primary" %>
+  </div></div>
+
+<% end %>

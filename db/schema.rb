@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017165108) do
+ActiveRecord::Schema.define(:version => 20121018150219) do
+
+  create_table "dares", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "end_time"
+    t.float    "amount_pledged"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.string   "attached_video_file_name"
+    t.string   "attached_video_content_type"
+    t.integer  "attached_video_file_size"
+    t.datetime "attached_video_updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "submits", :force => true do |t|
+    t.string   "user_submitted"
+    t.string   "username_submitted"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "user_id"
+    t.integer  "dare_id"
+    t.string   "attached_video_file_name"
+    t.string   "attached_video_content_type"
+    t.integer  "attached_video_file_size"
+    t.datetime "attached_video_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

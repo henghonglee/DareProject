@@ -1,0 +1,12 @@
+development:
+  bucket: psyched-sg-store
+  access_key_id: AKIAIYLWAX4A4YYKL5CQ
+  secret_access_key: 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
+test:
+  bucket: psyched-sg-store
+  access_key_id: AKIAIYLWAX4A4YYKL5CQ
+  secret_access_key: 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
+production:
+  bucket: psyched-sg-store
+  access_key_id: AKIAIYLWAX4A4YYKL5CQ
+  secret_access_key: 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

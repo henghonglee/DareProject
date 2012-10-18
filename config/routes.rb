@@ -1,6 +1,8 @@
 DareProject::Application.routes.draw do
 
 
+  resources :submit
+  resources :dare
   devise_for :users
 
   root :to => "home#index"
