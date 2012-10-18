@@ -12,6 +12,7 @@ class SubmitController < ApplicationController
     @submit.save
     @dare.submits << @submit
     @dare.save
+    redirect_to "/dare/#{params[:id]}"
     #go back to the dare.id
   end
 

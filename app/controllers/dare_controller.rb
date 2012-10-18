@@ -15,12 +15,9 @@ class DareController < ApplicationController
   
   def create
      @dare = Dare.new(params[:dare])
+     @dare.save
+    redirect_to dare_index_path
 
-      @dare.save
-       # redirect_to dare_index_path
-       #     else
-       #     redirect_to dare_index_path
-       #    end
   end
 
   def edit
