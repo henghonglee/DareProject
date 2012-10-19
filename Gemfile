@@ -10,6 +10,10 @@ gem 'paperclip'
 gem 'curb'
 gem 'simple_form'
 gem 'swfobject-rails'
+gem 'omniauth'
+gem 'oauth2'
+gem 'omniauth-facebook'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
