@@ -1,10 +1,12 @@
 DareProject::Application.routes.draw do
 
 
+  resources :user
   resources :submit
   resources :dare
-  devise_for :users
-
+  devise_for :users do
+   get 'users/sign_out', :to => 'devise/sessions#destroy'
+ end
   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

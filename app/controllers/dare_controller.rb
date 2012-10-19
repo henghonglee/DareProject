@@ -9,15 +9,23 @@ class DareController < ApplicationController
   end
 
   def new
-    @dare = Dare.new
-    
+    if user_signed_in?
+      @dare = Dare.new
+    else
+      redirect_to new_user_session_path
+    end
   end
   
   def create
+     if user_signed_in?
      @dare = Dare.new(params[:dare])
      @dare.save
-    redirect_to dare_index_path
-
+     current_user.dares << @dare
+     current_user.save
+     redirect_to dare_index_path
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def edit

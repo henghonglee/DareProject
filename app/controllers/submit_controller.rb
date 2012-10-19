@@ -1,5 +1,6 @@
 class SubmitController < ApplicationController
   # this controller is only for logged in users
+  before_filter :authenticate_user!
   def index
   end
 
@@ -11,7 +12,9 @@ class SubmitController < ApplicationController
     @dare = Dare.find(params[:id]) 
     @submit.save
     @dare.submits << @submit
+    current_user.submits << @submit
     @dare.save
+    
     redirect_to "/dare/#{params[:id]}"
     #go back to the dare.id
   end

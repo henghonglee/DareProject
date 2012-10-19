@@ -23,6 +23,22 @@ DareProject::Application.configure do
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
   
+  
+  
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.raise_delivery_errors = true
+
+    ActionMailer::Base.smtp_settings = {
+       address: "smtp.gmail.com",
+       port: 587,
+       domain: "heroku.com",
+       authentication: "plain",
+       enable_starttls_auto: true,
+       user_name: "psychedapp@gmail.com",
+       password: "psych3d@pp"
+     }
+  
+  
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Only use best-standards-support built into browsers

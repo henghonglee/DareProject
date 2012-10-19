@@ -1,0 +1,46 @@
+<h1>Dares</h1>
+<table class="table" border="1">
+  <tr>
+	<th>ID</th>
+    <th>title</th>
+	<th>description</th>
+	<th>video</th>
+	
+  
+  </tr>
+ 
+<% @user.dares.each do |dare| %>
+  <tr>
+	<td><%= dare.id %></td>
+	<td><%= dare.title %></td>
+	<td><%= dare.description %></td>
+	<td><div class="flowplayer" style="width: 624px; height: 260px; ">
+	   <video src="<%= dare.attached_video.url%>"></video>
+	</div></td>
+	<td><%= link_to 'SHOW', "/dare/#{dare.id}",:method => "GET", class: "btn btn-danger btn-small"%></td>
+
+  </tr>
+<% end %>
+</table>
+	<%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
+ 
+
+<h1> Submits </h1>
+<table class="table" border="1">
+  <tr>
+	<th>video</th>
+	
+  
+  </tr>
+
+<% @user.submits.each do |submit| %>
+  <tr>
+	<td><div class="flowplayer" style="width: 624px; height: 260px; ">
+	   <video src="<%= submit.attached_video.url%>"></video>
+	</div></td>
+
+  </tr>
+<% end %>
+</table>
+
+
