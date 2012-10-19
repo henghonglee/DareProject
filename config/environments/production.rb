@@ -20,6 +20,24 @@ DareProject::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+
+  ActionMailer::Base.delivery_method = :smtp
+   ActionMailer::Base.raise_delivery_errors = true
+
+     ActionMailer::Base.smtp_settings = {
+        address: "smtp.mailgun.org",
+        port: 587,
+        domain: "psychedapp.mailgun.org",
+        authentication: "plain",
+        enable_starttls_auto: true,
+        user_name: "postmaster@psychedapp.mailgun.org",
+        password: "december5613"
+      }
+
+    config.action_mailer.default_url_options = { :host => 'psyched.herokuapp.com' ,:protocol => 'http'}
+
+
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

@@ -1,7 +1,7 @@
 DareProject::Application.routes.draw do
 
 
-  resources :user
+  resources :user, :except=>[:new,:create]
   resources :submit
   resources :dare
   devise_for :users do
