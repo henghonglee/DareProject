@@ -3,11 +3,13 @@
 
 
 
-
-<h1>Home#index</h1>
+<div class="container hero-unit">
+<h1>DareAngels Prototype</h1>
+<h2>Angel investments for devilish dares</h2>
 <%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
 <%= link_to 'View all Dares', dare_index_path , class: "btn btn-large"%>
 <%if user_signed_in?%>
 <%= link_to 'My Profile', user_index_path , class: "btn btn-large"%>
 <%= link_to 'Sign Out', destroy_user_session_path , class: "btn btn-large"%>
 <%end%>
+</div>

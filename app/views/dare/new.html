@@ -1,3 +1,4 @@
+<div class="container hero-unit">
 <h1>Dare#new</h1>
 
 <%= simple_form_for(@dare, :url => "/dare/",:html=>{:class=>"span5", :mulitpart=>true }) do |f| %>
@@ -6,8 +7,9 @@
   	<%= f.input :attached_video, :required => false , :label=> "attachedvideo"%></br></br>
 
   
-  <div class="form-actions">
+
     <%= f.button :submit, "Upload!", class: "btn btn-large btn-primary" %>
-  </div></div>
+</div>
 
 <% end %>
+</div>
