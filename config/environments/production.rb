@@ -25,13 +25,13 @@ DareProject::Application.configure do
    ActionMailer::Base.raise_delivery_errors = true
 
      ActionMailer::Base.smtp_settings = {
-        address: "smtp.gmail.com",
+        address: "smtp.mailgun.org",
         port: 587,
-        domain: "heroku.com",
+        domain: "dareangels.mailgun.org",
         authentication: "plain",
         enable_starttls_auto: true,
-        user_name: "henghong.lee@gmail.com",
-        password: "okmijn5613"
+        user_name: "postmaster@dareangels.mailgun.org",
+        password: "6whcdi2cxh99"
       }
 
     config.action_mailer.default_url_options = { :host => 'dareangels.herokuapp.com' ,:protocol => 'http'}
