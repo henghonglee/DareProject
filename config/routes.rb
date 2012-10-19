@@ -4,7 +4,7 @@ DareProject::Application.routes.draw do
   resources :user, :except=>[:new,:create]
   resources :submit
   resources :dare
-  devise_for :users do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
    get 'users/sign_out', :to => 'devise/sessions#destroy'
  end
   root :to => "home#index"
