@@ -636,7 +636,7 @@ h6 {
   font-family: inherit;
   font-weight: bold;
   line-height: 1;
-  color: inherit;
+  color: #FFFCA3;
   text-rendering: optimizelegibility;
 }
 
@@ -5728,7 +5728,11 @@ a.badge:hover {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  background-color: #eeeeee;
+  opacity: 0.8;
+
+  box-shadow: 10px 10px #FFB545;
+
+  background-color: #FF7226;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -5737,6 +5741,7 @@ a.badge:hover {
 .hero-unit h1 {
   margin-bottom: 0;
   font-size: 60px;
+  font-color: #FF1100;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;

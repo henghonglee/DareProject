@@ -1,8 +1,4 @@
-<h1><%= @dare.title %></h1>
-<h2><%= @dare.description %></h2>
-<div class="flowplayer" style="width: 624px; height: 260px; ">
-   <video src="<%= @dare.attached_video.url%>"></video>
-</div>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -21,6 +17,13 @@
   });
   </script>
 
+<div class="container hero-unit">
+<h1><%= @dare.title %></h1>
+<h2><%= @dare.description %></h2>
+<div class="flowplayer" style="width: 624px; height: 260px; ">
+   <video src="<%= @dare.attached_video.url%>"></video>
+</div>
+
 <div id="progressbar" style="width: 500px; height: 26px; "></div>
 <h3>3 Days Left!</h3>
 
@@ -32,9 +35,10 @@
 <%= link_to 'Submit video!', "/submit/new?id=#{ @dare.id}",:method => "GET", class: "btn btn-danger btn-small"%>
 <h1>Submits</h1>
 <% @all_submits.each do |submit| %>
-<div class="flowplayer" style="width: 624px; height: 260px; ">
+<div class="flowplayer" >
 	   <video src="<%= submit.attached_video.url%>"></video>
 	</div>
 	
 
 <% end %>
+</div>

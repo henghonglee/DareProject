@@ -1,9 +1,16 @@
 
 
 
-
-
+<style>
+body
+{
+background-image:url('/assets/rough_diagonal_@2X.png');
+background-color:#FFFCA3;
+}
+</style>
+</br></br></br></br>
 <div class="container hero-unit">
+	<div class="span3">
 <h1>DareAngels Prototype</h1>
 <h2>Angel investments for devilish dares</h2>
 <%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
@@ -12,4 +19,5 @@
 <%= link_to 'My Profile', user_index_path , class: "btn btn-large"%>
 <%= link_to 'Sign Out', destroy_user_session_path , class: "btn btn-large"%>
 <%end%>
+</div>
 </div>
