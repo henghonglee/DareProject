@@ -14,7 +14,7 @@
 	<td><%= dare.id %></td>
 	<td><%= dare.title %></td>
 	<td><%= dare.description %></td>
-	<td><div class="flowplayer" style="width: 624px; height: 260px; ">
+	<td><div class="flowplayer" >
 	   <video src="<%= dare.attached_video.url%>"></video>
 	</div></td>
 	<td><%= link_to 'SHOW', "/dare/#{dare.id}",:method => "GET", class: "btn btn-danger btn-small"%></td>
@@ -35,7 +35,7 @@
 
 <% @user.submits.each do |submit| %>
   <tr>
-	<td><div class="flowplayer" style="width: 624px; height: 260px; ">
+	<td><div class="flowplayer" >
 	   <video src="<%= submit.attached_video.url%>"></video>
 	</div></td>
 

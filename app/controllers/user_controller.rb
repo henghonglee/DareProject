@@ -2,6 +2,7 @@ class UserController < ApplicationController
   before_filter :authenticate_user!
   def index
     @user = current_user
+    @a=@b=[]
   end
 
   def show

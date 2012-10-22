@@ -1,16 +1,48 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container" align="right">
+
+		
+
+				<a class="brand" href="<%= root_path %>">
+					 DareAngels
+				</a>		
+			<div class="nav-collapse">
+			<ul class="nav" id="mainnav">
+				<li class="active"><%= link_to 'Dares', dare_index_path %>
+				<li ><%= link_to 'About', root_path %>				
+			</ul>
+			<%if user_signed_in?%>
+			<%= current_user.email %>
+			<a class="btn btn-large btn-danger" href="<%= destroy_user_session_path %>">
+				Sign out
+				</a>
+			<%else%>
+			<a class="btn btn-medium btn-primary" href="<%= new_user_registration_path %>">
+				Sign up
+				</a>	
+			<a class="btn btn-medium btn-primary" href="<%= new_user_session_path %>">
+				Sign in
+				</a>
+			<%end%>
+		</div>
+		</div> <!-- /container -->
+
+	</div> <!-- /navbar-inner -->
+
+</div> <!-- /navbar -->
+
+</br></br></br>
 <div class="container hero-unit">
 <h2>Sign in</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+
     <%= f.input :email, :required => false, :autofocus => true %>
     <%= f.input :password, :required => false %>
     <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
 
-  <div class="form-actions">
     <%= f.button :submit, "Sign in" %>
-  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

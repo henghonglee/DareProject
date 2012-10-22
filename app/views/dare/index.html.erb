@@ -1,30 +1,72 @@
 
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container" align="right">
 
-<div class= "container">
-<table class="table" border="1">
-  <tr>
-	<th>ID</th>
-    <th>title</th>
-	<th>description</th>
-	<th>video</th>
-	
-  
-  </tr>
+		
+
+				<a class="brand" href="<%= root_path %>">
+					 DareAngels
+				</a>		
+			<div class="nav-collapse">
+			<ul class="nav" id="mainnav">
+				<li class="active"><%= link_to 'Dares', dare_index_path %>
+				<li ><%= link_to 'About', root_path %>				
+			</ul>
+			<%if user_signed_in?%>
+			<%= current_user.email %>
+			<a class="btn btn-large btn-danger" href="<%= destroy_user_session_path %>">
+				Sign out
+				</a>
+			<%else%>
+			<a class="btn btn-medium btn-primary" href="<%= new_user_registration_path %>">
+				Sign up
+				</a>	
+			<a class="btn btn-medium btn-primary" href="<%= new_user_session_path %>">
+				Sign in
+				</a>
+			<%end%>
+		</div>
+		</div> <!-- /container -->
+
+	</div> <!-- /navbar-inner -->
+
+</div> <!-- /navbar -->
+</br></br></br></br>
+<%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
+<div class= "container" border="1">
+<table class="table">
  
-<% @all_dares.each do |dare| %>
-  <tr>
-	<td><%= dare.id %></td>
-	<td><%= dare.title %></td>
-	<td><%= dare.description %></td>
-	<td><div class="flowplayer" style="width: 624px; height: 260px; ">
-	   <video src="<%= dare.attached_video.url%>"></video>
-	</div></td>
-	<td><%= link_to 'SHOW', "/dare/#{dare.id}",:method => "GET", class: "btn btn-danger btn-small"%></td>
+	
 
-  </tr>
+
+<% @all_dares.each do |dare| %>  
+<%if @a.count>3 
+	@a = []; %>
+<tr>
+<%else
+@a << 1;
+end%>
+	<td  width="25%" style="height:400px;">
+	<div class="flowplayer" style="max-height:200px;">
+	   <video src="<%= dare.attached_video.url%>" ></video>
+	</div>
+	<%= link_to 'SHOW', "/dare/#{dare.id}",:method => "GET", class: "btn btn-danger btn-small"%>
+	<%= dare.id %>
+	<%= dare.title %>
+	<%= dare.description %>
+	</td>
+	<%if @b.count>3 
+		@b = []; %>
+	</tr>
+	<%else
+	@b << 1;
+	end%>
+  
 <% end %>
+</tr>
 </table>
 
 
-<%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
+
 </div>
