@@ -34,13 +34,12 @@
 <div class="container" >
 <h1>Dares</h1>
 <table class="table" border="1">
+	<%@c=1%>
 <% @user.dares.each do |dare| %>  
-<%if @a.count>3 
-	@a = []; %>
+<%if @c==0%>
 <tr>
-<%else
-@a << 1;
-end%>
+<%end%>
+	<%@c=@c+1%>
 	<td  width="25%" style="height:400px;">
 	<div class="flowplayer" style="max-height:200px;">
 	   <video src="<%= dare.attached_video.url%>" ></video>
@@ -50,13 +49,10 @@ end%>
 	<%= dare.title %>
 	<%= dare.description %>
 	</td>
-	<%if @b.count>3 
-		@b = []; %>
+	<%if @c>4%>
+	<%@c=0%>
 	</tr>
-	<%else
-	@b << 1;
-	end%>
-  
+	<%end%>
 <% end %>
 </tr>
 </table>

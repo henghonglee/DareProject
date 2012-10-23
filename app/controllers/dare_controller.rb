@@ -1,8 +1,6 @@
 class DareController < ApplicationController
   def index #this should be the home page where you can see all the dares
     @all_dares = Dare.all 
-    @a = [];
-    @b = [];
   end
 
   def show

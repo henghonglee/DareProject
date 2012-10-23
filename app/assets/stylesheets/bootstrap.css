@@ -5241,6 +5241,8 @@ input[type="submit"].btn.btn-mini {
   padding: 4px;
   line-height: 20px;
   border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: #ffffff;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -5252,7 +5254,6 @@ input[type="submit"].btn.btn-mini {
        -o-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }
-
 a.thumbnail:hover {
   border-color: #0088cc;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
