@@ -33,47 +33,50 @@
 
 <div class="container" >
 <h1>Dares</h1>
-<table class="table" border="1">
+<div class="row-fluid">	
 	<%@c=1%>
 <% @user.dares.each do |dare| %>  
-<%if @c==0%>
-<tr>
-<%end%>
+	<%if @c==0%>
+	<ul class="thumbnails">
+	<%end%>
 	<%@c=@c+1%>
-	<td  width="25%" style="height:400px;">
-	<div class="flowplayer" style="max-height:200px;">
-	   <video src="<%= dare.attached_video.url%>" ></video>
-	</div>
-	<%= link_to 'SHOW', "/dare/#{dare.id}",:method => "GET", class: "btn btn-danger btn-small"%>
-	<%= dare.id %>
-	<%= dare.title %>
-	<%= dare.description %>
-	</td>
-	<%if @c>4%>
+
+	<li class="span4">
+		<a href="/dare/<%= dare.id %>">
+		<div class="thumbnail" style="height:500px;">
+			<img src="http://placehold.it/300x200">
+			<div class="caption">
+				<h3><%= dare.title %></h3>
+				<p><%= dare.description %></p>	
+				</a>
+	</li>
+	<%if @c>3%>
 	<%@c=0%>
-	</tr>
+	</ul>
 	<%end%>
 <% end %>
-</tr>
-</table>
 	
  </div>
 <%= link_to 'Create a Dare', new_dare_path , class: "btn btn-large"%>
 <h1> Submits </h1>
-<table class="table" border="1">
-  <tr>
-	<th>video</th>
-	
-  
-  </tr>
+<div class="row-fluid">	
+	<%@c=1%>
+<% @user.submits.each do |submit| %>  
+	<%if @c==0%>
+	<ul class="thumbnails">
+	<%end%>
+	<%@c=@c+1%>
 
-<% @user.submits.each do |submit| %>
-  <tr>
-	<td><div class="flowplayer" >
-	   <video src="<%= submit.attached_video.url%>"></video>
-	</div></td>
-
-  </tr>
+	<li class="span4">
+		<a href="/dare/<%= submit.id %>">
+		<div class="thumbnail" style="height:500px;">
+			<img src="http://placehold.it/300x200">
+			<div class="caption">
+				</a>
+	</li>
+	<%if @c>3%>
+	<%@c=0%>
+	</ul>
+	<%end%>
 <% end %>
-</table>
 
